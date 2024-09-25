@@ -23,8 +23,8 @@ monitors:
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
-
- -  id: auth.levelcrush # unique identifier
+  
+  - id: auth.levelcrush # unique identifier
     name: auth.levelcrush.com
     description: 'Login to the Level Crush network' # default=empty
     url: 'https://auth.levelcrush.com/' # URL to fetch
