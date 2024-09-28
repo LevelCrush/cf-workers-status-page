@@ -1,7 +1,7 @@
 settings:
   title: 'Status | Level Crush'
   url: 'https://status.levelcrush.com' # used for Slack messages
-  logo: logo-192x192.png # image in ./public/ folder
+  logo: logo.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
@@ -28,6 +28,24 @@ monitors:
     name: auth.levelcrush.com
     description: 'Login to the Level Crush network' # default=empty
     url: 'https://auth.levelcrush.com/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
+  
+  - id: code.levelcrush # unique identifier
+    name: code.levelcrush.com
+    description: 'Codehub for all things Level Crush' # default=empty
+    url: 'https://code.levelcrush.com/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: true # allows the title to be a link, default=true
+
+  - id: vault.levelcrush # unique identifier
+    name: vault.levelcrush.com
+    description: 'Securely Managed Passwords' # default=empty
+    url: 'https://vault.levelcrush.com/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
