@@ -15,6 +15,24 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
+  - id: games.levelcrush # unique identifier
+    name: games.levelcrush.com
+    description: 'Where we host our game servers' # default=empty
+    url: 'https://games.levelcrush.com' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+  
+  - id: spt.levelcrush # unique identifier
+    name: spt.levelcrush.com
+    description: 'Level Crush SPT Server' # default=empty
+    url: 'https://spt.levelcrush.com/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
   - id: tabletop.levelcrush # unique identifier
     name: tabletop.levelcrush.com
     description: 'Online DnD for the homies' # default=empty
