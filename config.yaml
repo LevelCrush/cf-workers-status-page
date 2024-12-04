@@ -1,79 +1,87 @@
 settings:
-  title: 'Status | Level Crush'
-  url: 'https://status.levelcrush.com' # used for Slack messages
-  logo: logo.png # image in ./public/ folder
-  daysInHistogram: 7 # number of days you want to display in histogram
-  collectResponseTimes: true # collects avg response times from CRON locations
-
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
-  monitorLabelNotOperational: 'Not Operational'
-  monitorLabelNoData: 'No data'
-  dayInHistogramNoData: 'No data'
-  dayInHistogramOperational: 'All good'
-  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
-
+  title: Status | Level Crush
+  url: https://status.levelcrush.com
+  logo: logo.png
+  daysInHistogram: 30
+  collectResponseTimes: true
+  allmonitorsOperational: All Systems Operational
+  notAllmonitorsOperational: Not All Systems Operational
+  monitorLabelOperational: Operational
+  monitorLabelNotOperational: Not Operational
+  monitorLabelNoData: No data
+  dayInHistogramNoData: No data
+  dayInHistogramOperational: All good
+  dayInHistogramNotOperational: " incident(s)"
 monitors:
-  - id: games.levelcrush # unique identifier
+  - id: levelcrush
+    name: Website
+    description: Our main homepage
+    url: https://levelcrush.com
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    linkable: true
+  - id: store.levelcrush
+    name: Store
+    description: Our Level Crush Store. For now hosted on a subdomain
+    url: https://store.levelcrush.com
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    linkable: true
+  - id: games.levelcrush
     name: games.levelcrush.com
-    description: 'Where we host our game servers' # default=empty
-    url: 'https://games.levelcrush.com' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
-
-  - id: spt.levelcrush # unique identifier
+    description: Where we host our game servers
+    url: https://games.levelcrush.com
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    linkable: false
+  - id: spt.levelcrush
     name: spt.levelcrush.com
-    description: 'Level Crush SPT Server' # default=empty
-    url: 'https://spt.levelcrush.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
-
-  - id: tabletop.levelcrush # unique identifier
+    description: Level Crush SPT Server
+    url: https://spt.levelcrush.com/
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    linkable: false
+  - id: tabletop.levelcrush
     name: tabletop.levelcrush.com
-    description: 'Online DnD for the homies' # default=empty
-    url: 'https://tabletop.levelcrush.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-    linkable: true # allows the title to be a link, default=true
-
-  - id: auth.levelcrush # unique identifier
+    description: Online DnD for the homies
+    url: https://tabletop.levelcrush.com/
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    linkable: true
+  - id: auth.levelcrush
     name: auth.levelcrush.com
-    description: 'Login to the Level Crush network' # default=empty
-    url: 'https://auth.levelcrush.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-    linkable: true # allows the title to be a link, default=true
-
-  - id: code.levelcrush # unique identifier
+    description: Login to the Level Crush network
+    url: https://auth.levelcrush.com/
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    linkable: true
+  - id: code.levelcrush
     name: code.levelcrush.com
-    description: 'Codehub for all things Level Crush' # default=empty
-    url: 'https://code.levelcrush.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-    linkable: true # allows the title to be a link, default=true
-
-  - id: vault.levelcrush # unique identifier
+    description: Codehub for all things Level Crush
+    url: https://code.levelcrush.com/
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    linkable: true
+  - id: vault.levelcrush
     name: vault.levelcrush.com
-    description: 'Securely Managed Passwords' # default=empty
-    url: 'https://vault.levelcrush.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-    linkable: true # allows the title to be a link, default=true
-
-  - id: assets.levelcrush # unique identifier
+    description: Securely Managed Passwords
+    url: https://vault.levelcrush.com/
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    linkable: true
+  - id: assets.levelcrush
     name: assets.levelcrush.com
-    description: 'Our Asset Server' # default=empty
-    url: 'https://assets.levelcrush.com' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: true # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
+    description: Our Asset Server
+    url: https://assets.levelcrush.com
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+    linkable: false
