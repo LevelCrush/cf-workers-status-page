@@ -4,7 +4,6 @@ settings:
   logo: logo.png # image in ./public/ folder
   daysInHistogram: 30 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
-
   allmonitorsOperational: 'All Systems Operational'
   notAllmonitorsOperational: 'Not All Systems Operational'
   monitorLabelOperational: 'Operational'
@@ -15,8 +14,8 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: levelcrush.com
-    name: Main Website
+  - id: levelcrush
+    name: Website
     description: 'Our main homepage'
     url: 'https://levelcrush.com'
     method: GET
