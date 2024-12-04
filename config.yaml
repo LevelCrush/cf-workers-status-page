@@ -2,8 +2,9 @@ settings:
   title: 'Status | Level Crush'
   url: 'https://status.levelcrush.com' # used for Slack messages
   logo: logo.png # image in ./public/ folder
-  daysInHistogram: 30 # number of days you want to display in histogram
+  daysInHistogram: 7 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
+
   allmonitorsOperational: 'All Systems Operational'
   notAllmonitorsOperational: 'Not All Systems Operational'
   monitorLabelOperational: 'Operational'
@@ -14,24 +15,6 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: levelcrush
-    name: Website
-    description: 'Our main homepage'
-    url: 'https://levelcrush.com'
-    method: GET
-    expectStatus: 200
-    followRedirect: true
-    linkable: true
-
-  - id: store.levelcrush
-    name: Store
-    description: 'Our Level Crush Store. For now hosted on a subdomain'
-    url: 'https://store.levelcrush.com'
-    method: GET
-    expectStatus: 200
-    followRedirect: true
-    linkable: true
-
   - id: games.levelcrush # unique identifier
     name: games.levelcrush.com
     description: 'Where we host our game servers' # default=empty
@@ -40,7 +23,7 @@ monitors:
     expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
-  
+
   - id: spt.levelcrush # unique identifier
     name: spt.levelcrush.com
     description: 'Level Crush SPT Server' # default=empty
@@ -58,7 +41,7 @@ monitors:
     expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
-  
+
   - id: auth.levelcrush # unique identifier
     name: auth.levelcrush.com
     description: 'Login to the Level Crush network' # default=empty
@@ -67,7 +50,7 @@ monitors:
     expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
-  
+
   - id: code.levelcrush # unique identifier
     name: code.levelcrush.com
     description: 'Codehub for all things Level Crush' # default=empty
@@ -85,7 +68,7 @@ monitors:
     expectStatus: 200 # operational status, default=200
     followRedirect: true # should fetch follow redirects, default=false
     linkable: true # allows the title to be a link, default=true
-    
+
   - id: assets.levelcrush # unique identifier
     name: assets.levelcrush.com
     description: 'Our Asset Server' # default=empty
